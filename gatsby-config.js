@@ -1,3 +1,5 @@
+const tailwindcss = require('tailwindcss');
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -69,6 +71,21 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`
       }
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [tailwindcss]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        develop: false,
+        purgeOnly: [`src/css/tailwind.css`]
+      }
+    }
   ]
 };

@@ -7,11 +7,7 @@ const Layout = ({ location, title, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
-        style={{
-          marginTop: 0
-        }}
-      >
+      <h1 className="my-4 text-2xl">
         <Link
           style={{
             boxShadow: `none`,
